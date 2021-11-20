@@ -37,7 +37,6 @@ fn main() {
     println!("borrow a section of the array as a slice");
     analyze_slice(&ys[1 .. 4]);
 
-    // 越界的下标会引发致命错误（panic）
-    println!("{}", xs[5]);
+   
 }
 
