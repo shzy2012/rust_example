@@ -68,3 +68,15 @@ config.toml Cargo's global configuration file
 credentials.toml Private login credentials from cargo login in order to log in to a registry.
 .crates.toml This hidden file contains package information of crates installed via cargo install. Do NOT edit by hand!
 ```
+
+
+所有权规则
+```bash
+Rust的所有权规则保证了同一时刻永远只有一个变量持有一个对象的所有权，避免数据竞争。
+
+1. Rust 中每一个值或者对象都有一个称之为其 所有者（owner）的变量
+2. 值或对象有且只能有一个所有者
+3. 当所有者离开作用域，所有者所代表的对象或者值会被立即销毁
+4. 赋值语句、函数调用、函数返回等会导致所有权转移，原有变量会失效
+```
+
