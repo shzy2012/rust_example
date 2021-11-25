@@ -1,15 +1,49 @@
 # rust examples
 
 https://doc.rust-lang.org/cargo/getting-started/index.html
+https://rustwiki.org/zh-CN/rust-by-example/index.html
 
 命令
 ```bash
+rustup update         Get the latest version of Rust
+       show           Show the active and installed toolchains or profiles
+       update         Update Rust toolchains and rustup
+       check          Check for updates to Rust toolchains and rustup
+       default        Set the default toolchain
+       toolchain      Modify or query the installed toolchains
+       target         Modify a toolchain's supported targets
+       component      Modify a toolchain's installed components
+       override       Modify directory toolchain overrides
+       run            Run a command with an environment configured for a given toolchain
+       which          Display which binary will be run for a given command
+       doc            Open the documentation for the current toolchain
+       man            View the man page for a given command
+       self           Modify the rustup installation
+       set            Alter rustup settings
+       completions    Generate tab-completion scripts for your shell
+       help           Prints this message or the help of the given subcommand(s)
+
+cargo new project
 cargo update            # updates all dependencies
 cargo update -p regex   # updates just “regex”
-
-
 cargo test
 cargo test foo
+      build, b    Compile the current package
+      check, c    Analyze the current package and report errors, but don't build object files
+      clean       Remove the target directory
+      doc, d      Build this package's and its dependencies' documentation
+      new         Create a new cargo package
+      init        Create a new cargo package in an existing directory
+      run, r      Run a binary or example of the local package
+      test, t     Run the tests
+      bench       Run the benchmarks
+      update      Update dependencies listed in Cargo.lock
+      search      Search registry for crates
+      publish     Package and upload this package to the registry
+      install     Install a Rust binary. Default location is $HOME/.cargo/bin
+      uninstall   Uninstall a Rust binary
+
+rustc  
 ```
 
 Package Layout
@@ -80,3 +114,14 @@ Rust的所有权规则保证了同一时刻永远只有一个变量持有一个�
 4. 赋值语句、函数调用、函数返回等会导致所有权转移，原有变量会失效
 ```
 
+
+
+----------
+常见问题
+
+1. no authentication available
+```bash
+eval `ssh-agent -s`
+ssh-add  # 把专用密钥添加到ssh-agent的高速缓存中
+cargo build
+```

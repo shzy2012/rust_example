@@ -21,7 +21,7 @@ fn main(){
 
     println!("{:?}",names);
 
-    // into_iter - 会消耗集合。在每次迭代中，集合中的数据本身会被提供。一旦集合被消 耗了，之后就无法再使用了，因为它已经在循环中被 “移除”（move）了。
+    // into_iter - 会消耗集合。在每次迭代中，集合中的数据本身会被提供。一旦集合被消耗了，之后就无法再使用了，因为它已经在循环中被 “移除”（move）了。
     for elem in names.into_iter() {
         match elem{
             "B1" =>  println!("into:{}",elem),

@@ -9,6 +9,3 @@ edition = "2021"
 time = "0.1.12"
 regex = { git = "https://github.com/rust-lang/regex.git" }
 
-[lib]
-crate-type = ["cdylib"]
-bench = false
