@@ -1,4 +1,20 @@
 fn main() {
+    // 区间标记 a..b,步长为1,包含a,不包含b
+    for n in 1..100
+    /*1..=100*/
+    {
+        if n % 15 == 0 {
+            println!("fizzbuzz");
+        } else if n % 3 == 0 {
+            println!("fizz");
+        } else if n % 5 == 0 {
+            println!("buzz");
+        } else {
+            println!("{}", n);
+        }
+    }
+
+    /*********************迭代器********************/
     let mut names = vec!["A", "B", "C"];
     // iter - 在每次迭代中借用集合中的一个元素。这样集合本身不会被改变，循环之后仍 可以使用
     for elem in names.iter() {
