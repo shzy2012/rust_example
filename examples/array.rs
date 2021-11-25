@@ -2,7 +2,7 @@
 https://rustwiki.org/zh-CN/rust-by-example/primitives/array.html
 数组（array）是一组拥有相同类型 T 的对象的集合，在内存中是连续存储的。数组使用 中括号 [] 来创建，且它们的大小在编译时会被确定。数组的类型标记为 [T; size]（ 译注：T 为元素的类型，size 表示数组的大小）。
 切片（slice）类型和数组类似，但其大小在编译时是不确定的。相反，切片是一个双字 对象（two-word object），第一个字是一个指向数据的指针，第二个字是切片的长度。这 个 “字” 的宽度和 usize 相同，由处理器架构决定，比如在 x86-64 平台上就是 64 位。 slice 可以用来借用数组的一部分。slice 的类型标记为 &[T]。
-*/ 
+*/
 
 use std::mem;
 
@@ -35,8 +35,5 @@ fn main() {
 
     // slice 可以指向数组的一部分
     println!("borrow a section of the array as a slice");
-    analyze_slice(&ys[1 .. 4]);
-
-   
+    analyze_slice(&ys[1..4]);
 }
-

@@ -43,7 +43,10 @@ cargo test foo
       install     Install a Rust binary. Default location is $HOME/.cargo/bin
       uninstall   Uninstall a Rust binary
 
-rustc  
+编译 rustc
+格式化 rustfmt
+    rustup component add rustfmt #安装
+    cargo fmt  #格式化
 ```
 
 Package Layout
@@ -114,6 +117,11 @@ Rust的所有权规则保证了同一时刻永远只有一个变量持有一个�
 4. 赋值语句、函数调用、函数返回等会导致所有权转移，原有变量会失效
 ```
 
+函数表
+```rust
+std::any::type_name::<T>()    //返回变量类型名称
+std::mem::size_of_val(&str))  //返回一个变量所占的字节数
+```
 
 
 ----------
@@ -125,3 +133,4 @@ eval `ssh-agent -s`
 ssh-add  # 把专用密钥添加到ssh-agent的高速缓存中
 cargo build
 ```
+
