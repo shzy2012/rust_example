@@ -124,9 +124,10 @@ std::any::type_name::<T>()    //返回变量类型名称
 std::mem::size_of_val(&str))  //返回一个变量所占的字节数
 ```
 
-allow
+"#"
 ```rust
 #[allow(dead_code)]
+#[warn(dead_code)]
 ```
 
 ----------

@@ -1,4 +1,3 @@
-
 fn main() {
     // 将 `optional` 设为 `Option<i32>` 类型
     let mut optional = Some(0);
