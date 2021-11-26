@@ -1,6 +1,7 @@
 # rust examples
 
 https://doc.rust-lang.org/cargo/getting-started/index.html
+
 https://rustwiki.org/zh-CN/rust-by-example/index.html
 
 命令
@@ -123,6 +124,10 @@ std::any::type_name::<T>()    //返回变量类型名称
 std::mem::size_of_val(&str))  //返回一个变量所占的字节数
 ```
 
+allow
+```rust
+#[allow(dead_code)]
+```
 
 ----------
 常见问题
