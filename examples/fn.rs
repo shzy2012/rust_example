@@ -6,9 +6,9 @@ fn main() {
     fizzbuzz_to(100);
 
     // 多个返回值
-    println!("result=>{:?}",mut_resunt());//result=>(false, 0)
-    let (p1,p2) = mut_resunt();
-    println!("{}{}",p1,p2); //false0
+    println!("result=>{:?}", mut_resunt()); //result=>(false, 0)
+    let (p1, p2) = mut_resunt();
+    println!("{}{}", p1, p2); //false0
 }
 
 // 当函数返回 `()` 时，函数签名可以省略返回类型
@@ -42,6 +42,6 @@ fn is_divisible_by(lhs: u32, rhs: u32) -> bool {
     lhs % rhs == 0
 }
 
-fn mut_resunt() -> (bool,u32){
-   (false,0)
+fn mut_resunt() -> (bool, u32) {
+    (false, 0)
 }

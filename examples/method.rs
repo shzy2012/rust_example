@@ -20,9 +20,9 @@ impl Point {
 }
 
 // 允许多次impl
-impl Point{
-    fn plugin()->(&'static str,bool){
-        (&"A",true)
+impl Point {
+    fn plugin() -> (&'static str, bool) {
+        (&"A", true)
     }
 }
 
@@ -58,6 +58,4 @@ fn main() {
     rectangle.translate(10.00, 2.00);
 
     println!("{:#?}", rectangle.p1);
-
-
 }
