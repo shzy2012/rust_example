@@ -122,6 +122,7 @@ Rust的所有权规则保证了同一时刻永远只有一个变量持有一个�
 ```rust
 std::any::type_name::<T>()    //返回变量类型名称
 std::mem::size_of_val(&str))  //返回一个变量所占的字节数
+std::mem
 ```
 
 属性
