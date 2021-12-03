@@ -21,11 +21,11 @@ fn main() {
 
     println!("Entering block");
     {
-         // 这和 `use deeply::nested::function as function` 等价。
+        // 这和 `use deeply::nested::function as function` 等价。
         // 此 `function()` 将遮蔽外部的同名函数。
         use deeply::nested::function;
         function();
-         // `use` 绑定拥有局部作用域。在这个例子中，`function()`
+        // `use` 绑定拥有局部作用域。在这个例子中，`function()`
         // 的遮蔽只存在在这个代码块中。
         println!("Leaving block");
     }

@@ -1,29 +1,27 @@
-
 // 使用 super （父级）和 self（自身）关键字消除歧义，以及防止不必要的路径硬编码
 
-
-fn function(){
+fn function() {
     println!("called `function()`");
 }
 
-mod cool{
-    pub fn function(){
+mod cool {
+    pub fn function() {
         println!("called `cool::function()`");
     }
 }
 
-mod my{
-    fn function(){
+mod my {
+    fn function() {
         println!("called `my::function()`");
     }
 
-    mod cool{
-        pub fn function(){
+    mod cool {
+        pub fn function() {
             println!("called `my::cool::function()`");
         }
     }
 
-    pub fn indirect_call(){
+    pub fn indirect_call() {
         print!("called `my::indirect_call()`,that\n> ");
         // `self` 关键字表示当前的模块作用域——在这个例子是 `my`。
         // 调用 `self::function()` 和直接调用 `function()` 都得到相同的结果，
@@ -35,17 +33,16 @@ mod my{
         self::cool::function();
         // `super` 关键字表示父作用域（在 `my` 模块外面）。
         super::function();
-        
+
         // 这将在 *crate* 作用域内绑定 `cool::function` 。
         // 在这个例子中，crate 作用域是最外面的作用域。
         {
-           use crate::cool::function as root_function;
-           root_function();
+            use crate::cool::function as root_function;
+            root_function();
         }
-
     }
 }
 
-fn main(){
+fn main() {
     my::indirect_call();
 }
