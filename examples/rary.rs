@@ -16,4 +16,4 @@ pub fn indirect_access() {
 }
 
 // unuse
-fn main(){}
+fn main() {}

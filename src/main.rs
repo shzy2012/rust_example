@@ -4,9 +4,8 @@ fn main() {
     let re = Regex::new(r"^\d{4}-\d{2}-\d{2}$").unwrap();
     println!("Did our date match? {}", re.is_match("2014-01-01"));
 
-    let  x = b'x';
+    let x = b'x';
     let mut y = x;
     y = b'y';
-    println!("x:{:p}-y:{:p}",&x,&y);
-
+    println!("x:{:p}-y:{:p}", &x, &y);
 }

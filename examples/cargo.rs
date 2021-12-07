@@ -16,4 +16,4 @@
 build = "build.rs"
 */
 
-fn main(){}
+fn main() {}
