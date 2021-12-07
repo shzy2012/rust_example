@@ -10,8 +10,10 @@
 // https://rustwiki.org/zh-CN/rust-by-example/cargo/build_scripts.html
 // 构建脚本只是另一个 Rust 文件，此文件将在编译包中的任何其他内容之前，优先进行编译和调用。
 
-/**********
+/*
 [package]
 ...
 build = "build.rs"
-***********/
+*/
+
+fn main(){}

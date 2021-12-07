@@ -14,3 +14,6 @@ pub fn indirect_access() {
     println!("called the `indirect_access()`");
     private_function();
 }
+
+// unuse
+fn main(){}
