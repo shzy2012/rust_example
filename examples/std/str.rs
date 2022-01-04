@@ -2,7 +2,8 @@
 /*
 Rust 中有两种字符串类型：String 和 &str。
 
-String被存储为由字节组成的vector（Vec<u8>），但保证了它一定是一个有效的UTF-8序列。String是堆分配的，可增长的，且不是零结尾的（null terminated）。
+String被存储为由字节组成的vector（Vec<u8>），但保证了它一定是一个有效的UTF-8序列。
+String是堆分配的，可增长的，且不是零结尾的（null terminated）。
 &str是一个总是指向有效UTF-8 序列的切片（&[u8]），并可用来查看String的内容，就如同 &[T]是Vec<T>的全部或部分引用。
 
 
