@@ -6,12 +6,12 @@
 它有两个可选值：
     Borrowed，用于包裹对象的引用（通用引用）；
     Owned，用于包裹对象的所有者；
-*/ 
+*/
 
 use std::borrow::Cow;
 
-fn main(){
-    let mut cow:Cow<[_]> = Cow::Owned(vec![1,2,3]);
+fn main() {
+    let mut cow: Cow<[_]> = Cow::Owned(vec![1, 2, 3]);
     let nums = cow.to_mut();
-    println!("{:?}",nums);
+    println!("{:?}", nums);
 }
