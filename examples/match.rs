@@ -90,4 +90,24 @@ fn main() {
         n @ 18 => println!("n is {}", n),
         _ => (),
     }
+
+    let str_examples = vec!["-c", "-n", "-m"];
+    for elem in str_examples {
+        match elem {
+            "-c" => (),
+            "-n" => (),
+            "-m" => (),
+            _ => (),
+        }
+    }
+
+    let string_examples = vec!["-c".to_string(), "-n".to_string(), "-m".to_string()];
+    for elem in string_examples {
+        match elem.as_str() {
+            "-c" => (),
+            "-n" => (),
+            "-m" => (),
+            _ => (),
+        }
+    }
 }
