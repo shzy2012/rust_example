@@ -1,5 +1,20 @@
 use regex::Regex;
 use std::mem;
+use std::str;
+use std::sync::Arc;
+use std::thread;
+
+fn share_var_with_mult_thread() {
+    let nums = Arc::new(vec![240, 159, 146, 150]);
+
+    for _ in 0..3 {
+        let nums = Arc::clone(&nums);
+        thread::spawn(move || {
+            let surl = str::from_utf8(&nums).unwrap();
+            println!("{:?}", surl)
+        });
+    }
+}
 
 fn main() -> Result<(), std::io::Error> {
     let re = Regex::new(r"^\d{4}-\d{2}-\d{2}$").unwrap();
