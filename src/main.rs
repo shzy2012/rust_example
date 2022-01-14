@@ -6,7 +6,6 @@ use std::thread;
 
 fn share_var_with_mult_thread() {
     let nums = Arc::new(vec![240, 159, 146, 150]);
-
     for _ in 0..3 {
         let nums = Arc::clone(&nums);
         thread::spawn(move || {

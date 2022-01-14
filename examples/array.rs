@@ -36,4 +36,7 @@ fn main() {
     // slice 可以指向数组的一部分
     println!("borrow a section of the array as a slice");
     analyze_slice(&ys[1..4]);
+
+
+    
 }
