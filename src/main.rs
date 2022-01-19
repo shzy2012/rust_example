@@ -1,4 +1,5 @@
 use regex::Regex;
+use rust_example::libs::concurrency;
 use std::mem;
 use std::str;
 use std::sync::Arc;
@@ -15,7 +16,13 @@ fn share_var_with_mult_thread() {
     }
 }
 
-fn main() -> Result<(), std::io::Error> {
+#[tokio::main]
+async fn main() -> Result<(), std::io::Error> {
+    // concurrency::p1::run().await;
+    // concurrency::p2::run().await;
+    // concurrency::p3::run().await;
+    concurrency::p4::run().await;
+
     let re = Regex::new(r"^\d{4}-\d{2}-\d{2}$").unwrap();
     println!("Did our date match? {}", re.is_match("2014-01-01"));
 
