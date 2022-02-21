@@ -11,4 +11,5 @@ ctrlc = "3.1.7"
 futures = "0.3.19"
 tokio = { version = "1.15.0", features = ["full"] }
 reqwest = "0.11.9"
-lazy_static = "1.4.0" # 延迟加载,statics that require code to be executed at runtime in order to be initialized.
+lazy_static = "1.4.0"                                      # 延迟加载,statics that require code to be executed at runtime in order to be initialized.
+bitmaps = "3.1.0"

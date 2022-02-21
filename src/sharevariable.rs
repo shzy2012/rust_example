@@ -34,20 +34,7 @@ pub mod t1 {
             let mut guard = arc.lock().unwrap();
             guard.0 += 1;
         }
-        child.await;
         let mut guard = arc.lock().unwrap();
         println!("{}", guard.0)
     }
 }
-
-#[cfg(test)]
-mod tests {
-    use crate::libs::sharevariable::t1;
-
-    #[tokio::test]
-    async fn exploration() {
-        assert_eq!(2 + 2, 4);
-    }
-}
-
-// cargo test libs::sharevariable::tests::exploration -- --exact
