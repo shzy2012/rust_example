@@ -10,8 +10,7 @@ use std::thread;
 
 #[tokio::main]
 async fn main() -> Result<(), std::io::Error> {
-    // // main 返回错误
-    // let f = std::fs::File::open("bat.txt")?;
+    // 如何复制Box对象的值给栈变量？
 
     Ok(())
 }
