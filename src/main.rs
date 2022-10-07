@@ -2,6 +2,9 @@ use bitmaps::Bitmap;
 use regex::Regex;
 use rust_example::bitmap;
 use rust_example::concurrency;
+use rust_example::inner::{Body, Form, FormParts, Part};
+use rust_example::lazy_load::HASHMAP;
+use rust_example::log;
 use rust_example::sharevariable;
 use std::mem;
 use std::str;
@@ -10,7 +13,13 @@ use std::thread;
 
 #[tokio::main]
 async fn main() -> Result<(), std::io::Error> {
-    // 如何复制Box对象的值给栈变量？
+    log!("log print 1");
+
+    {
+        HASHMAP.clone();
+    }
+
+    log!("log print 2");
 
     Ok(())
 }

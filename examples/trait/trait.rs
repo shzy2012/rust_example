@@ -13,14 +13,7 @@ self
 Self:方法参数中的Self是一种语法糖，是方法的接收类型,
 它可能出现在trait或impl中。但经常出现在trait中，它是任何最终实现trait的类型代替
 */
-
-struct Sheep{
-    naked:bool,
-    name: &'static str
-}
-
-trait Animal{
-
+trait Animal {
     // 静态方法签名；`Self` 表示实现者类型（implementor type）
     fn new(name: &'static str) -> Self;
 
@@ -29,54 +22,61 @@ trait Animal{
     fn noise(&self) -> &'static str;
 
     // trait 提供默认的方法定义
-    fn talk(&self){
-        println!("{} say {}",self.name(),self.noise());
+    fn talk(&self) {
+        println!("{} say {}", self.name(), self.noise());
     }
 }
 
-impl Sheep{
-    fn is_naked(&self) -> bool{
+struct Sheep {
+    naked: bool,
+    name: &'static str,
+}
+
+impl Sheep {
+    fn is_naked(&self) -> bool {
         self.naked
     }
 
-    fn shear(&mut self){
-        if self.is_naked(){
+    fn shear(&mut self) {
+        if self.is_naked() {
             // 实现者可以使用它的 trait 方法
-            println!("{} is already naked...",self.name());
-        }else{
-            println!("{} gets a haircut!",self.name);
-            self.naked=true;
+            println!("{} is already naked...", self.name());
+        } else {
+            println!("{} gets a haircut!", self.name);
+            self.naked = true;
         }
     }
 }
 
 // 对 `Sheep` 实现 `Animal` trait
-impl Animal for Sheep{
-    
-    fn new(name:&'static str)->Sheep{
-        Sheep{name:name,naked:false}
+impl Animal for Sheep {
+    fn new(name: &'static str) -> Sheep {
+        Sheep {
+            name: name,
+            naked: false,
+        }
     }
 
-    fn name(&self) -> &'static str{
+    fn name(&self) -> &'static str {
         self.name
     }
 
-    fn noise(&self) -> &'static str{
-        if self.is_naked(){
+    fn noise(&self) -> &'static str {
+        if self.is_naked() {
             "hahhahhahha?"
-        }else{
+        } else {
             "hahhahahahh!"
         }
     }
 
     // 默认 trait 方法可以重载
-    fn talk(&self){
+    fn talk(&self) {
         println!("{} pauses briefly... {}", self.name, self.noise());
     }
 }
 
-fn main(){
-    let mut dolly:Sheep = Animal::new("Dolly");
+fn main() {
+    let mut dolly: Sheep = Animal::new("Dolly");
     dolly.talk();
     dolly.shear();
     dolly.talk();
